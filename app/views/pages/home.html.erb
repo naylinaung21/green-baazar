@@ -1,0 +1,15 @@
+<main class="container">
+    <div class="card">
+        <div class="card-header">    
+            <h1>Plant </h1>
+        </div>
+        <div class="card-body my-5 text-center">
+            <h1>Welcome to Home page</h1>
+            <% if user_signed_in? %>
+                <%= link_to "View plants", plants_path, class: "btn btn-primary" %>
+            <% else %>
+                <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary" %>
+            <% end %>
+        </div>
+    </div>
+</main>

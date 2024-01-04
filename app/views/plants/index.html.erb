@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+<div class="col-lg-12 mx-auto">
+  <h1>Plants</h1>
+  <div class="d-flex justify-content-end">
+    <%= link_to "New plant", new_plant_path, class: "btn btn-primary btn-lg mb-3" %>
+  </div>
+  <% if @plants.present? %>
+    <div id="plants">
+      <% @plants.each do |plant| %>
+        <div class="card shadow mb-3">
+          <div class="card-body">
+            <%= render plant %>
+            <div class="d-flex">
+              <%= link_to "Show this plant", plant, class: "btn btn-primary me-3" %>
+              <%= button_to "Destroy this plant", plant, method: :delete, class: "btn btn-danger" %>
+            </div>
+          </div>
+        </div>      
+      <% end %>
+    </div>
+  <% else %>
+    <div class="card shadow mb-3">
+      <div class="card-body">
+        <span>There is no data, create new data.</span>
+      </div>
+    </div> 
+  <% end  %>
+</div>
